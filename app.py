@@ -18,6 +18,10 @@ def index():
                            rating= list(popular_df['avg_rating'].values)
     )
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @app.route('/recommend')
 def recommend_page():
     return render_template("recommend.html")
@@ -39,6 +43,9 @@ def recommend():
     print(data)
 
     return render_template('recommend.html', data=data)
+
+
+
 
 if __name__ == "__main__":
     app.run(port=8000,debug=True)
